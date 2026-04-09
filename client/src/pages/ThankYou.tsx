@@ -146,11 +146,9 @@ export default function ThankYou() {
               Questions? Contact our team at support@velahealth.com or check out our FAQ.
             </p>
             <Link href="/">
-              <a>
-                <Button className="btn-primary">
-                  Back to home
-                </Button>
-              </a>
+              <Button className="btn-primary">
+                Back to home
+              </Button>
             </Link>
           </div>
 

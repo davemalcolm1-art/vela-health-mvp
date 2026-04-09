@@ -85,11 +85,9 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/quiz">
-                  <a>
-                    <Button className="btn-primary w-full sm:w-auto">
-                      Find out if our program is right for you
-                    </Button>
-                  </a>
+                  <Button className="btn-primary w-full sm:w-auto">
+                    Find out if our program is right for you
+                  </Button>
                 </Link>
                 <a href="#how-it-works" className="btn-ghost w-full sm:w-auto inline-flex items-center justify-center">
                   See how it works
@@ -131,16 +129,14 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program) => (
-              <Link key={program.id} href={`/quiz?goal=${program.id}`}>
-                <a className="card-hover bg-card rounded-lg p-8 border border-border hover:border-accent transition-colors">
-                  <div className="text-4xl mb-4">{program.icon}</div>
-                  <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
-                    {program.title}
-                  </h3>
-                  <p className="text-body text-foreground/70">
-                    {program.description}
-                  </p>
-                </a>
+              <Link key={program.id} href={`/quiz?goal=${program.id}`} className="card-hover bg-card rounded-lg p-8 border border-border hover:border-accent transition-colors block">
+                <div className="text-4xl mb-4">{program.icon}</div>
+                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+                  {program.title}
+                </h3>
+                <p className="text-body text-foreground/70">
+                  {program.description}
+                </p>
               </Link>
             ))}
           </div>
@@ -157,11 +153,9 @@ export default function Home() {
             Here's exactly what happens from your first visit to your first quarterly review.
           </p>
           <Link href="/how-it-works">
-            <a>
-              <Button className="btn-primary">
-                Learn the full process
-              </Button>
-            </a>
+            <Button className="btn-primary">
+              Learn the full process
+            </Button>
           </Link>
         </div>
       </section>
@@ -204,11 +198,9 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Link href="/quiz">
-              <a>
-                <Button className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-3">
-                  Start eligibility assessment
-                </Button>
-              </a>
+              <Button className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-3">
+                Start eligibility assessment
+              </Button>
             </Link>
             <button className="btn-ghost">
               Join the waitlist

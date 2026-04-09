@@ -118,11 +118,9 @@ export default function HowItWorks() {
             Ready to get started?
           </h2>
           <Link href="/quiz">
-            <a>
-              <Button className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-3">
-                Start your eligibility assessment
-              </Button>
-            </a>
+            <Button className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-3">
+              Start your eligibility assessment
+            </Button>
           </Link>
         </div>
       </section>

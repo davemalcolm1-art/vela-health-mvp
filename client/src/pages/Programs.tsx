@@ -147,12 +147,10 @@ export default function Programs() {
                       </p>
                       <p className="text-small text-foreground/60 mb-6">{program.terms}</p>
 
-                      <Link href={`/quiz?goal=${program.id}`}>
-                        <a>
-                          <Button className="w-full btn-primary">
-                            Check eligibility
-                          </Button>
-                        </a>
+                      <Link href={`/quiz?goal=${program.id}`} className="block">
+                        <Button className="w-full btn-primary">
+                          Check eligibility
+                        </Button>
                       </Link>
                     </div>
                   </div>
@@ -173,11 +171,9 @@ export default function Programs() {
             Start with our eligibility assessment. Our clinical team will guide you to the right program.
           </p>
           <Link href="/quiz">
-            <a>
-              <Button className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-3">
-                Start assessment
-              </Button>
-            </a>
+            <Button className="bg-accent text-accent-foreground hover:opacity-90 px-8 py-3">
+              Start assessment
+            </Button>
           </Link>
         </div>
       </section>

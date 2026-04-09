@@ -43,76 +43,76 @@
 }
 
 :root {
-  /* VELA Health Brand Colors */
-  --primary: oklch(0.35 0.08 260); /* Deep navy #0D1B2A */
-  --primary-foreground: oklch(0.97 0.01 65); /* Off-white #F5F2ED */
-  --sidebar-primary: oklch(0.35 0.08 260);
-  --sidebar-primary-foreground: oklch(0.97 0.01 65);
-  --chart-1: oklch(0.53 0.12 140); /* Sage green */
-  --chart-2: oklch(0.53 0.12 140);
-  --chart-3: oklch(0.35 0.08 260);
-  --chart-4: oklch(0.35 0.08 260);
-  --chart-5: oklch(0.25 0.06 260);
+  /* VELA Health Brand Colors - Redesigned */
+  --primary: oklch(0.42 0.08 200); /* Warm sage #5B8A7F */
+  --primary-foreground: oklch(0.98 0.01 70); /* Warm off-white #F9F8F6 */
+  --sidebar-primary: oklch(0.42 0.08 200);
+  --sidebar-primary-foreground: oklch(0.98 0.01 70);
+  --chart-1: oklch(0.65 0.12 60); /* Warm gold #D4A574 */
+  --chart-2: oklch(0.65 0.12 60);
+  --chart-3: oklch(0.42 0.08 200);
+  --chart-4: oklch(0.42 0.08 200);
+  --chart-5: oklch(0.35 0.08 200);
   --radius: 0.65rem;
-  --background: oklch(0.97 0.01 65); /* Off-white */
-  --foreground: oklch(0.35 0.08 260); /* Deep navy */
+  --background: oklch(0.98 0.01 70); /* Warm off-white */
+  --foreground: oklch(0.25 0.06 200); /* Warm dark gray #2D3E3A */
   --card: oklch(1 0 0); /* White */
-  --card-foreground: oklch(0.35 0.08 260); /* Deep navy */
+  --card-foreground: oklch(0.25 0.06 200); /* Warm dark gray */
   --popover: oklch(1 0 0); /* White */
-  --popover-foreground: oklch(0.35 0.08 260); /* Deep navy */
-  --secondary: oklch(0.97 0.01 65); /* Off-white */
-  --secondary-foreground: oklch(0.35 0.08 260); /* Deep navy */
-  --muted: oklch(0.92 0.01 65); /* Light off-white */
-  --muted-foreground: oklch(0.45 0.06 260); /* Muted navy */
-  --accent: oklch(0.53 0.12 140); /* Sage green #7C9E87 */
+  --popover-foreground: oklch(0.25 0.06 200); /* Warm dark gray */
+  --secondary: oklch(0.98 0.01 70); /* Warm off-white */
+  --secondary-foreground: oklch(0.25 0.06 200); /* Warm dark gray */
+  --muted: oklch(0.92 0.01 70); /* Light warm off-white */
+  --muted-foreground: oklch(0.50 0.06 200); /* Muted sage */
+  --accent: oklch(0.65 0.12 60); /* Warm gold #D4A574 */
   --accent-foreground: oklch(1 0 0); /* White */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.01 65); /* Light off-white border */
+  --border: oklch(0.92 0.01 70); /* Light warm off-white border */
   --input: oklch(1 0 0); /* White input */
-  --ring: oklch(0.53 0.12 140); /* Sage green ring */
+  --ring: oklch(0.65 0.12 60); /* Warm gold ring */
   --sidebar: oklch(1 0 0); /* White sidebar */
-  --sidebar-foreground: oklch(0.35 0.08 260); /* Deep navy */
-  --sidebar-accent: oklch(0.53 0.12 140); /* Sage green */
-  --sidebar-accent-foreground: oklch(0.35 0.08 260); /* Deep navy */
-  --sidebar-border: oklch(0.92 0.01 65);
-  --sidebar-ring: oklch(0.53 0.12 140);
+  --sidebar-foreground: oklch(0.25 0.06 200); /* Warm dark gray */
+  --sidebar-accent: oklch(0.65 0.12 60); /* Warm gold */
+  --sidebar-accent-foreground: oklch(0.25 0.06 200); /* Warm dark gray */
+  --sidebar-border: oklch(0.92 0.01 70);
+  --sidebar-ring: oklch(0.65 0.12 60);
 }
 
 .dark {
-  /* Dark mode uses same VELA Health colors */
-  --primary: oklch(0.35 0.08 260); /* Deep navy */
-  --primary-foreground: oklch(0.97 0.01 65); /* Off-white */
-  --sidebar-primary: oklch(0.35 0.08 260);
-  --sidebar-primary-foreground: oklch(0.97 0.01 65);
-  --background: oklch(0.35 0.08 260); /* Deep navy background */
-  --foreground: oklch(0.97 0.01 65); /* Off-white text */
-  --card: oklch(0.42 0.08 260); /* Slightly lighter navy */
-  --card-foreground: oklch(0.97 0.01 65); /* Off-white text */
-  --popover: oklch(0.42 0.08 260);
-  --popover-foreground: oklch(0.97 0.01 65);
-  --secondary: oklch(0.42 0.08 260);
-  --secondary-foreground: oklch(0.97 0.01 65);
-  --muted: oklch(0.45 0.06 260); /* Muted navy */
-  --muted-foreground: oklch(0.85 0.01 65); /* Muted off-white */
-  --accent: oklch(0.53 0.12 140); /* Sage green */
-  --accent-foreground: oklch(0.35 0.08 260); /* Deep navy */
+  /* Dark mode uses warm tones */
+  --primary: oklch(0.42 0.08 200); /* Warm sage */
+  --primary-foreground: oklch(0.98 0.01 70); /* Warm off-white */
+  --sidebar-primary: oklch(0.42 0.08 200);
+  --sidebar-primary-foreground: oklch(0.98 0.01 70);
+  --background: oklch(0.25 0.06 200); /* Dark warm gray background */
+  --foreground: oklch(0.98 0.01 70); /* Warm off-white text */
+  --card: oklch(0.35 0.08 200); /* Slightly lighter warm gray */
+  --card-foreground: oklch(0.98 0.01 70); /* Warm off-white text */
+  --popover: oklch(0.35 0.08 200);
+  --popover-foreground: oklch(0.98 0.01 70);
+  --secondary: oklch(0.35 0.08 200);
+  --secondary-foreground: oklch(0.98 0.01 70);
+  --muted: oklch(0.45 0.06 200); /* Muted warm gray */
+  --muted-foreground: oklch(0.85 0.01 70); /* Muted warm off-white */
+  --accent: oklch(0.65 0.12 60); /* Warm gold */
+  --accent-foreground: oklch(0.25 0.06 200); /* Warm dark gray */
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.45 0.06 260); /* Navy border */
-  --input: oklch(0.45 0.06 260); /* Navy input */
-  --ring: oklch(0.53 0.12 140); /* Sage green ring */
-  --chart-1: oklch(0.53 0.12 140);
-  --chart-2: oklch(0.53 0.12 140);
-  --chart-3: oklch(0.35 0.08 260);
-  --chart-4: oklch(0.35 0.08 260);
-  --chart-5: oklch(0.25 0.06 260);
-  --sidebar: oklch(0.35 0.08 260);
-  --sidebar-foreground: oklch(0.97 0.01 65);
-  --sidebar-accent: oklch(0.53 0.12 140);
-  --sidebar-accent-foreground: oklch(0.35 0.08 260);
-  --sidebar-border: oklch(0.45 0.06 260);
-  --sidebar-ring: oklch(0.53 0.12 140);
+  --border: oklch(0.45 0.06 200); /* Warm gray border */
+  --input: oklch(0.45 0.06 200); /* Warm gray input */
+  --ring: oklch(0.65 0.12 60); /* Warm gold ring */
+  --chart-1: oklch(0.65 0.12 60);
+  --chart-2: oklch(0.65 0.12 60);
+  --chart-3: oklch(0.42 0.08 200);
+  --chart-4: oklch(0.42 0.08 200);
+  --chart-5: oklch(0.35 0.08 200);
+  --sidebar: oklch(0.25 0.06 200);
+  --sidebar-foreground: oklch(0.98 0.01 70);
+  --sidebar-accent: oklch(0.65 0.12 60);
+  --sidebar-accent-foreground: oklch(0.25 0.06 200);
+  --sidebar-border: oklch(0.45 0.06 200);
+  --sidebar-ring: oklch(0.65 0.12 60);
 }
 
 @layer base {
@@ -241,3 +241,35 @@
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 }
+  /* Updated button styles for premium feel */
+  .btn-primary {
+    @apply bg-accent text-white px-8 py-3 rounded-lg font-sans font-semibold hover:bg-accent/90 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-primary text-white px-8 py-3 rounded-lg font-sans font-semibold hover:bg-primary/90 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  /* Premium section backgrounds */
+  .section-warm-bg {
+    @apply bg-gradient-to-br from-accent/5 to-primary/5;
+  }
+
+  .section-cream-bg {
+    @apply bg-background;
+  }
+
+  /* Tagline styles */
+  .tagline {
+    @apply text-lg md:text-xl font-serif italic text-primary;
+  }
+
+  /* Premium card */
+  .premium-card {
+    @apply bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Image placeholder */
+  .image-placeholder {
+    @apply bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center text-foreground/40 text-center p-4 min-h-64;
+  }

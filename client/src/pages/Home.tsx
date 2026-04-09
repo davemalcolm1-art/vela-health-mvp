@@ -91,12 +91,10 @@ export default function Home() {
                 Prescribed and monitored by AHPRA-registered practitioners. Evidence-based protocols. Available Australia-wide via telehealth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link href="/quiz">
-                  <Button className="btn-primary w-full sm:w-auto flex items-center gap-2">
-                    Check eligibility
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
+                <a href="/quiz" className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2">
+                  Check eligibility
+                  <ArrowRight className="w-4 h-4" />
+                </a>
                 <a href="#how-it-works" className="btn-ghost w-full sm:w-auto inline-flex items-center justify-center">
                   See how it works
                 </a>
@@ -142,7 +140,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program, index) => (
-              <Link key={program.id} href={`/quiz?goal=${program.id}`} className={`premium-card ${program.color} fade-in`} style={{ animationDelay: `${index * 0.1}s` }}>
+              <a key={program.id} href={`/quiz?goal=${program.id}`} className={`premium-card ${program.color} fade-in block`} style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-serif font-bold text-foreground flex-1">
                     {program.title}
@@ -152,7 +150,7 @@ export default function Home() {
                 <p className="text-body text-foreground/70">
                   {program.description}
                 </p>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -168,12 +166,10 @@ export default function Home() {
           <p className="text-subheading text-foreground/70 max-w-2xl mx-auto mb-12">
             Here's exactly what happens from your first visit to your first quarterly review.
           </p>
-          <Link href="/how-it-works">
-            <Button className="btn-secondary flex items-center gap-2 mx-auto">
-              Learn the full process
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </Link>
+          <a href="/how-it-works" className="btn-secondary inline-flex items-center justify-center gap-2 mx-auto">
+            Learn the full process
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </section>
 
@@ -238,12 +234,10 @@ export default function Home() {
             Complete a short eligibility assessment. No commitment. No clinical recommendations until you've spoken with a doctor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link href="/quiz">
-              <Button className="bg-accent text-white hover:bg-accent/90 px-8 py-3 flex items-center gap-2">
-                Start eligibility assessment
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+            <a href="/quiz" className="bg-accent text-white hover:bg-accent/90 px-8 py-3 inline-flex items-center justify-center gap-2 rounded-lg font-sans font-semibold transition-all duration-200 shadow-md hover:shadow-lg">
+              Start eligibility assessment
+              <ArrowRight className="w-4 h-4" />
+            </a>
             <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-sans font-semibold hover:bg-white/10 transition-colors">
               Join the waitlist
             </button>

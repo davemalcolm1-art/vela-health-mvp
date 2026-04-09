@@ -1,21 +1,63 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Zap, Heart, Leaf, Sparkles, Shield, BarChart3, Package, Phone, MessageSquare, Pill, Home as HomeIcon } from 'lucide-react';
 
 export default function Home() {
   const programs = [
-    { id: 'body-composition', title: 'Body Composition', color: 'from-blue-50 to-blue-100', borderColor: 'border-blue-200' },
-    { id: 'energy-cognition', title: 'Energy & Cognition', color: 'from-purple-50 to-purple-100', borderColor: 'border-purple-200' },
-    { id: 'recovery-repair', title: 'Recovery & Repair', color: 'from-green-50 to-green-100', borderColor: 'border-green-200' },
-    { id: 'skin-collagen', title: 'Skin & Collagen', color: 'from-pink-50 to-pink-100', borderColor: 'border-pink-200' },
-    { id: 'immune-resilience', title: 'Immune Resilience', color: 'from-amber-50 to-amber-100', borderColor: 'border-amber-200' },
-    { id: 'comprehensive', title: 'Comprehensive', color: 'from-teal-50 to-teal-100', borderColor: 'border-teal-200' },
+    { 
+      id: 'body-composition', 
+      title: 'Body Composition', 
+      icon: BarChart3,
+      color: 'from-blue-50 to-blue-100',
+      borderColor: 'border-blue-200',
+      description: 'Optimise body composition and metabolic health'
+    },
+    { 
+      id: 'energy-cognition', 
+      title: 'Energy & Cognition', 
+      icon: Zap,
+      color: 'from-purple-50 to-purple-100',
+      borderColor: 'border-purple-200',
+      description: 'Enhance mental clarity and sustained energy'
+    },
+    { 
+      id: 'recovery-repair', 
+      title: 'Recovery & Repair', 
+      icon: Heart,
+      color: 'from-green-50 to-green-100',
+      borderColor: 'border-green-200',
+      description: 'Support tissue repair and athletic recovery'
+    },
+    { 
+      id: 'skin-collagen', 
+      title: 'Skin & Collagen', 
+      icon: Sparkles,
+      color: 'from-pink-50 to-pink-100',
+      borderColor: 'border-pink-200',
+      description: 'Improve skin elasticity and collagen production'
+    },
+    { 
+      id: 'immune-resilience', 
+      title: 'Immune Resilience', 
+      icon: Shield,
+      color: 'from-amber-50 to-amber-100',
+      borderColor: 'border-amber-200',
+      description: 'Strengthen immune function and resilience'
+    },
+    { 
+      id: 'comprehensive', 
+      title: 'Comprehensive', 
+      icon: Leaf,
+      color: 'from-teal-50 to-teal-100',
+      borderColor: 'border-teal-200',
+      description: 'Multi-system optimisation protocol'
+    },
   ];
 
   const steps = [
-    { num: 1, title: 'Quick assessment', desc: 'See if you\'re eligible' },
-    { num: 2, title: 'Online consultation', desc: 'Connect with a practitioner' },
-    { num: 3, title: 'Prescription issued', desc: 'Personalized treatment plan created' },
-    { num: 4, title: 'Medicine delivered', desc: 'Receive medicine at home' },
+    { num: 1, title: 'Quick assessment', desc: 'See if you\'re eligible', icon: Phone },
+    { num: 2, title: 'Online consultation', desc: 'Connect with a practitioner', icon: MessageSquare },
+    { num: 3, title: 'Prescription issued', desc: 'Personalized treatment plan created', icon: Pill },
+    { num: 4, title: 'Medicine delivered', desc: 'Receive medicine at home', icon: Package },
   ];
 
   const faqItems = [
@@ -47,86 +89,73 @@ export default function Home() {
 
   return (
     <div className="w-full bg-background">
-      {/* Hero Section with Image */}
-      <section className="bg-gradient-to-b from-background via-background to-accent/5 pt-8 md:pt-12 pb-8 md:pb-12 relative overflow-hidden">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-b from-background via-background to-accent/5 pt-12 md:pt-16 pb-12 md:pb-16 relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left: Text */}
-            <div className="max-w-2xl fade-in">
-              <p className="text-accent text-base md:text-lg font-semibold mb-2">Optimise before you intervene.</p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 leading-tight">
-                Doctor-led health <span className="text-accent">optimisation.</span>
-              </h1>
-              <p className="text-base md:text-lg text-foreground/70 mb-6 leading-relaxed max-w-xl">
-                Prescribed and monitored by AHPRA-registered practitioners. Evidence-based protocols. Available Australia-wide via telehealth.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a href="/quiz" className="bg-accent text-primary hover:bg-accent/90 px-6 md:px-8 py-3 md:py-4 rounded-lg font-sans font-semibold inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg w-full sm:w-auto">
-                  Check eligibility
-                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
-                </a>
-                <a href="#process" className="border-2 border-primary text-primary hover:bg-primary/5 px-6 md:px-8 py-3 md:py-4 rounded-lg font-sans font-semibold inline-flex items-center justify-center gap-2 transition-colors duration-200 w-full sm:w-auto">
-                  See how it works
-                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Right: Hero Image Placeholder */}
-            <div className="relative h-96 md:h-full min-h-96 lg:min-h-[500px] rounded-2xl overflow-hidden shadow-xl fade-in" style={{ animationDelay: '0.1s' }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🏥</div>
-                  <p className="text-foreground/50 font-sans text-sm">Hero Image Placeholder</p>
-                  <p className="text-foreground/40 font-sans text-xs mt-2">Lifestyle photo: Doctor consultation, modern clinic setting</p>
-                </div>
-              </div>
+          <div className="max-w-3xl fade-in">
+            <p className="text-accent text-base md:text-lg font-semibold mb-3">Optimise before you intervene.</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-4 leading-tight">
+              Doctor-led health <span className="text-accent">optimisation.</span>
+            </h1>
+            <p className="text-base md:text-lg text-foreground/70 mb-8 leading-relaxed max-w-2xl">
+              Prescribed and monitored by AHPRA-registered practitioners. Evidence-based protocols. Available Australia-wide via telehealth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="/quiz" className="bg-accent text-primary hover:bg-accent/90 px-6 md:px-8 py-3 md:py-4 rounded-lg font-sans font-semibold inline-flex items-center justify-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg w-full sm:w-auto">
+                Check eligibility
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
+              </a>
+              <a href="#process" className="border-2 border-primary text-primary hover:bg-primary/5 px-6 md:px-8 py-3 md:py-4 rounded-lg font-sans font-semibold inline-flex items-center justify-center gap-2 transition-colors duration-200 w-full sm:w-auto">
+                See how it works
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programs Grid - with Image Placeholders */}
-      <section className="bg-background py-8 md:py-12 relative">
+      {/* Programs Grid - with Real Icons */}
+      <section className="bg-background py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <p className="text-accent text-base md:text-lg font-semibold mb-2 text-center">CHOOSE YOUR GOAL</p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground text-center">
+          <div className="mb-10 md:mb-12">
+            <p className="text-accent text-base md:text-lg font-semibold mb-2">CHOOSE YOUR GOAL</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground">
               Personalised programs for every objective
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {programs.map((prog, idx) => (
-              <a
-                key={prog.id}
-                href={`/quiz?goal=${prog.id}`}
-                className={`group cursor-pointer fade-in overflow-hidden rounded-xl border ${prog.borderColor} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white`}
-                style={{ animationDelay: `${idx * 0.05}s` }}
-              >
-                {/* Image Container */}
-                <div className={`h-40 md:h-48 bg-gradient-to-br ${prog.color} flex items-center justify-center relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300" />
-                  <div className="text-center z-10">
-                    <div className="text-5xl md:text-6xl mb-2">💊</div>
-                    <p className="text-foreground/40 font-sans text-xs">Illustration Placeholder</p>
+            {programs.map((prog, idx) => {
+              const IconComponent = prog.icon;
+              return (
+                <a
+                  key={prog.id}
+                  href={`/quiz?goal=${prog.id}`}
+                  className={`group cursor-pointer fade-in overflow-hidden rounded-2xl border ${prog.borderColor} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white`}
+                  style={{ animationDelay: `${idx * 0.05}s` }}
+                >
+                  {/* Icon Container */}
+                  <div className={`h-48 md:h-56 bg-gradient-to-br ${prog.color} flex items-center justify-center relative overflow-hidden`}>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 bg-primary transition-opacity duration-300" />
+                    <IconComponent className="w-24 md:w-32 h-24 md:h-32 text-primary/40 group-hover:text-primary/60 transition-all duration-300 transform group-hover:scale-110" />
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-5 md:p-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-lg md:text-xl font-serif font-bold text-primary flex-1">
+                  {/* Content */}
+                  <div className="p-5 md:p-6">
+                    <h3 className="text-lg md:text-xl font-serif font-bold text-primary mb-2">
                       {prog.title}
                     </h3>
-                    <ArrowRight className="w-5 h-5 text-primary/40 group-hover:text-primary/70 transition-colors flex-shrink-0 ml-2" />
+                    <p className="text-sm md:text-base text-foreground/60 mb-4">
+                      {prog.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-primary/60 group-hover:text-primary transition-colors">
+                      <span className="text-sm font-semibold">Learn more</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                  <p className="text-sm text-foreground/60">
-                    Optimised for your specific health goals
-                  </p>
-                </div>
-              </a>
-            ))}
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -136,42 +165,42 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 md:mb-12">
             <p className="text-accent text-base md:text-lg font-semibold mb-2">VELA MAKES IT SIMPLE</p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground">
               Four steps to optimisation
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl border border-primary/10 overflow-hidden hover:shadow-md transition-shadow duration-300 fade-in"
-                style={{ animationDelay: `${idx * 0.08}s` }}
-              >
-                {/* Icon/Image Container */}
-                <div className="h-32 md:h-40 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center relative">
-                  <div className="text-center">
-                    <div className="text-4xl md:text-5xl mb-2">📱</div>
-                    <p className="text-foreground/30 font-sans text-xs">Step {step.num} Icon</p>
+            {steps.map((step, idx) => {
+              const IconComponent = step.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl border border-primary/10 overflow-hidden hover:shadow-md transition-shadow duration-300 fade-in"
+                  style={{ animationDelay: `${idx * 0.08}s` }}
+                >
+                  {/* Icon Container */}
+                  <div className="h-40 md:h-48 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center relative">
+                    <IconComponent className="w-16 md:w-20 h-16 md:h-20 text-primary/30" />
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-5 md:p-6 text-center">
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <div className="w-7 h-7 rounded-full bg-accent text-primary font-serif font-bold flex items-center justify-center text-sm">
-                      {step.num}
+                  {/* Content */}
+                  <div className="p-5 md:p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <div className="w-7 h-7 rounded-full bg-accent text-primary font-serif font-bold flex items-center justify-center text-sm">
+                        {step.num}
+                      </div>
+                      <h3 className="text-base md:text-lg font-serif font-bold text-foreground">
+                        {step.title}
+                      </h3>
                     </div>
-                    <h3 className="text-base md:text-lg font-serif font-bold text-foreground">
-                      {step.title}
-                    </h3>
+                    <p className="text-sm md:text-base text-foreground/60">
+                      {step.desc}
+                    </p>
                   </div>
-                  <p className="text-sm md:text-base text-foreground/60">
-                    {step.desc}
-                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -203,53 +232,53 @@ export default function Home() {
       {/* Why VELA - Comparison */}
       <section className="bg-gradient-to-b from-background to-accent/5 py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-10">
+          <div className="text-center mb-10 md:mb-12">
             <p className="text-accent text-base md:text-lg font-semibold mb-2">WHY VELA</p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground">
               The regulated difference
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-            <div className="bg-red-50 rounded-xl p-6 md:p-7 border border-red-200">
-              <h3 className="text-lg md:text-xl font-serif font-bold text-red-900 mb-4">❌ Unregulated overseas</h3>
-              <ul className="space-y-2 text-sm md:text-base text-red-800">
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="bg-red-50 rounded-2xl p-6 md:p-8 border-2 border-red-200">
+              <h3 className="text-lg md:text-xl font-serif font-bold text-red-900 mb-5">Unregulated overseas</h3>
+              <ul className="space-y-3 text-sm md:text-base text-red-800">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✗</span>
                   <span>Unknown origins & impurities</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✗</span>
                   <span>No medical oversight</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✗</span>
                   <span>Unverified storage & potency</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✗</span>
                   <span>Zero accountability</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-green-50 rounded-xl p-6 md:p-7 border border-green-200">
-              <h3 className="text-lg md:text-xl font-serif font-bold text-green-900 mb-4">✅ VELA's regulated</h3>
-              <ul className="space-y-2 text-sm md:text-base text-green-800">
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+            <div className="bg-green-50 rounded-2xl p-6 md:p-8 border-2 border-green-200">
+              <h3 className="text-lg md:text-xl font-serif font-bold text-green-900 mb-5">VELA's regulated</h3>
+              <ul className="space-y-3 text-sm md:text-base text-green-800">
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✓</span>
                   <span>AHPRA-registered doctors</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✓</span>
                   <span>TGA-licensed pharmacy</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✓</span>
                   <span>Clinical monitoring & adjustments</span>
                 </li>
-                <li className="flex gap-2">
-                  <span className="flex-shrink-0">•</span>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 text-lg">✓</span>
                   <span>Full accountability & oversight</span>
                 </li>
               </ul>
@@ -261,9 +290,9 @@ export default function Home() {
       {/* Compliance FAQ */}
       <section className="bg-background py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-10">
+          <div className="text-center mb-10 md:mb-12">
             <p className="text-accent text-base md:text-lg font-semibold mb-2">COMPLIANCE & TRANSPARENCY</p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-3">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
               Clear regulatory framework
             </h2>
             <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
@@ -271,14 +300,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 md:p-8 border border-primary/10">
+          <div className="bg-white rounded-2xl p-6 md:p-8 border border-primary/10">
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-b border-foreground/10 last:border-0">
-                  <AccordionTrigger className="text-left font-serif font-bold text-foreground hover:text-accent transition-colors py-3 md:py-4 text-sm md:text-base">
+                  <AccordionTrigger className="text-left font-serif font-bold text-foreground hover:text-accent transition-colors py-4 md:py-5 text-sm md:text-base">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-foreground/70 pb-3 md:pb-4 text-sm md:text-base">
+                  <AccordionContent className="text-foreground/70 pb-4 md:pb-5 text-sm md:text-base">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -292,7 +321,7 @@ export default function Home() {
       <section className="bg-gradient-to-r from-primary to-primary/95 text-white py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-accent text-base md:text-lg font-semibold mb-3">READY TO OPTIMISE?</p>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4">
             Find out if our program is right for you.
           </h2>
           <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl mx-auto">

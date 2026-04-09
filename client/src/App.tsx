@@ -4,17 +4,39 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import HowItWorks from "./pages/HowItWorks";
+import Programs from "./pages/Programs";
+import About from "./pages/About";
+import Quiz from "./pages/Quiz";
+import QuizResults from "./pages/QuizResults";
+import BookConsultation from "./pages/BookConsultation";
+import ThankYou from "./pages/ThankYou";
+import Blog from "./pages/Blog";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <div className="flex flex-col min-h-screen">
+      <Navigation />
+      <main className="flex-1">
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/how-it-works" component={HowItWorks} />
+          <Route path="/programs" component={Programs} />
+          <Route path="/about" component={About} />
+          <Route path="/quiz" component={Quiz} />
+          <Route path="/quiz/results/:quizId" component={QuizResults} />
+          <Route path="/book" component={BookConsultation} />
+          <Route path="/thank-you" component={ThankYou} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/404" component={NotFound} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
@@ -28,7 +50,6 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider
         defaultTheme="light"
-        // switchable
       >
         <TooltipProvider>
           <Toaster />

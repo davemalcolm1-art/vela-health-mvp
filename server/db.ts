@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, quizResponses, quizResults, waitlistSignups, InsertQuizResponse, InsertQuizResult, InsertWaitlistSignup } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,80 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+export async function getUserByEmail(email: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(users).where(eq(users.email, email)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+/**
+ * Quiz responses queries
+ */
+export async function createQuizResponse(data: InsertQuizResponse) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+  const result = await db.insert(quizResponses).values(data);
+  return result;
+}
+
+export async function getQuizResponseById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(quizResponses).where(eq(quizResponses.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+/**
+ * Quiz results queries
+ */
+export async function createQuizResult(data: InsertQuizResult) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+  const result = await db.insert(quizResults).values(data);
+  return result;
+}
+
+export async function getQuizResultByResponseId(quizResponseId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(quizResults).where(eq(quizResults.quizResponseId, quizResponseId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateQuizResultEmailCaptured(id: number, email: string) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+  await db.update(quizResults).set({ emailCaptured: 1 }).where(eq(quizResults.id, id));
+}
+
+/**
+ * Waitlist signups queries
+ */
+export async function createWaitlistSignup(data: InsertWaitlistSignup) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+  try {
+    const result = await db.insert(waitlistSignups).values(data);
+    return result;
+  } catch (error) {
+    // Handle duplicate email error gracefully
+    console.warn("Waitlist signup failed (possibly duplicate email):", error);
+    throw error;
+  }
+}
+
+export async function getWaitlistSignupByEmail(email: string) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(waitlistSignups).where(eq(waitlistSignups.email, email)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}

@@ -65,7 +65,7 @@ export type InsertWaitlistSignup = typeof waitlistSignups.$inferInsert;
  */
 export const quizResults = mysqlTable("quiz_results", {
   id: int("id").autoincrement().primaryKey(),
-  quizResponseId: int("quizResponseId").notNull(),
+  quizResponseId: int("quizResponseId").notNull().references(() => quizResponses.id),
   recommendedProgram: varchar("recommendedProgram", { length: 100 }).notNull(),
   personalizedMessage: text("personalizedMessage"),
   emailCaptured: int("emailCaptured").default(0).notNull(), // 1 = email captured, 0 = not yet
@@ -74,3 +74,5 @@ export const quizResults = mysqlTable("quiz_results", {
 
 export type QuizResult = typeof quizResults.$inferSelect;
 export type InsertQuizResult = typeof quizResults.$inferInsert;
+
+

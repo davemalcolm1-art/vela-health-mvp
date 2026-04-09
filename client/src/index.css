@@ -219,7 +219,7 @@
     @apply opacity-0 transition-opacity duration-700;
   }
 
-  .fade-in.visible {
+  .fade-in.reveal {
     @apply opacity-100;
   }
 

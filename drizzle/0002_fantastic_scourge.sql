@@ -1,0 +1,1 @@
+ALTER TABLE `quiz_results` ADD CONSTRAINT `quiz_results_quizResponseId_quiz_responses_id_fk` FOREIGN KEY (`quizResponseId`) REFERENCES `quiz_responses`(`id`) ON DELETE no action ON UPDATE no action;

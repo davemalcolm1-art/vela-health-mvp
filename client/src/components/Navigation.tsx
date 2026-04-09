@@ -18,31 +18,25 @@ export default function Navigation() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <a className="text-2xl font-serif font-bold text-foreground hover:opacity-80 transition-opacity">
-              VELA
-            </a>
+          <Link href="/" className="text-2xl font-serif font-bold text-foreground hover:opacity-80 transition-opacity">
+            VELA
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a className="text-sm font-sans text-foreground hover:text-accent transition-colors">
-                  {item.label}
-                </a>
+              <Link key={item.href} href={item.href} className="text-sm font-sans text-foreground hover:text-accent transition-colors">
+                {item.label}
               </Link>
             ))}
           </div>
 
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <Link href="/quiz">
-              <a>
-                <Button className="bg-accent text-accent-foreground hover:opacity-90">
-                  Check Eligibility
-                </Button>
-              </a>
+            <Link href="/quiz" className="inline-block">
+              <Button className="bg-accent text-accent-foreground hover:opacity-90">
+                Check Eligibility
+              </Button>
             </Link>
           </div>
 
@@ -65,21 +59,14 @@ export default function Navigation() {
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <a
-                    className="text-sm font-sans text-foreground hover:text-accent transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
+                <Link key={item.href} href={item.href} className="text-sm font-sans text-foreground hover:text-accent transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                  {item.label}
                 </Link>
               ))}
-              <Link href="/quiz">
-                <a onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full bg-accent text-accent-foreground hover:opacity-90">
-                    Check Eligibility
-                  </Button>
-                </a>
+              <Link href="/quiz" className="block" onClick={() => setMobileMenuOpen(false)}>
+                <Button className="w-full bg-accent text-accent-foreground hover:opacity-90">
+                  Check Eligibility
+                </Button>
               </Link>
             </div>
           </div>

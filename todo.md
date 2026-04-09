@@ -89,3 +89,15 @@
 - [x] Final AHPRA compliance check (disclaimer on all pages)
 - [x] Performance optimization (build passes)
 - [x] Create checkpoint and prepare for delivery
+
+## Homepage Redesign Phase 2 (Complete Rebuild)
+- [ ] Fix hero section: deep navy background, left column with eyebrow/headline/subheadline/CTAs/trust pills, right column with stats card
+- [ ] Add marquee trust bar below hero with scrolling signals
+- [ ] Update typography: Cormorant Garamond for h1/h2, DM Sans for body
+- [ ] Rebuild program cards: 6 cards with pricing, featured states (sage/navy accents), descriptions
+- [ ] Rebuild process steps: 4 horizontal steps with circular badges and descriptions
+- [ ] Add Why VELA comparison section: 4 cards with icons
+- [ ] Complete quiz flow: progress bar, one question per screen, email capture on step 8, results screen
+- [ ] Add mobile floating CTA bar at bottom
+- [ ] Remove all broken image tags, use gradient placeholders instead
+- [ ] Final typography and spacing polish

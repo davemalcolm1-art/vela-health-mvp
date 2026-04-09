@@ -186,7 +186,7 @@
   }
 
   .font-sans {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Sans', sans-serif;
   }
 
   /* Hero text */
@@ -239,5 +239,39 @@
   /* Card hover effect */
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Marquee animation */
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    background: rgb(15 27 45);
+    color: white;
+    padding: 16px 0;
+  }
+
+  .marquee-content {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    white-space: nowrap;
+    gap: 2rem;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
+
+  /* Trust pill */
+  .trust-pill {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 text-white text-sm font-sans;
   }
 }
